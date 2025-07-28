@@ -187,7 +187,9 @@ function App() {
         {/* About Section */}
         <section id="about" className="py-16 bg-white ">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center">Our Mission</h2>
+            <h2 className="text-3xl font-bold text-center text-blue-600">
+              Our Mission
+            </h2>
             <div className="max-w-3xl mx-auto rounded-xl p-8 ">
               <p className="text-lg text-center">
                 We are committed to protecting the community by providing expert
@@ -253,7 +255,7 @@ function App() {
         {/* Services Section */}
         <section id="services" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center">
+            <h2 className="text-3xl font-bold text-center text-blue-600">
               Our Professional Services
             </h2>
             <div className="max-w-3xl mx-auto rounded-xl p-8 ">
@@ -338,7 +340,7 @@ function App() {
         {/* Blog & Tips Section */}
         <section id="blog" className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center">
+            <h2 className="text-3xl font-bold text-center text-blue-600">
               Prevention & Safety Tips
             </h2>
             <div className="max-w-3xl mx-auto rounded-xl p-8 ">
@@ -508,7 +510,9 @@ function App() {
         {/* Contact Section */}
         <section id="contact" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Contact Us</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center text-blue-600">
+              Contact Us
+            </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Contact Info */}
               <div className="bg-white rounded-xl p-8 shadow-md">
