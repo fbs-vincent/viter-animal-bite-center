@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         banner:
-          "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/img/banner.webp')",
+          "linear-gradient(to right, rgba(0,0,0,20), rgba(255,255,255,0)), url('/img/banner-2.webp')",
       },
     },
   },

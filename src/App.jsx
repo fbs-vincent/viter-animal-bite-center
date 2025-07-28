@@ -50,16 +50,16 @@ function App() {
                   </a>
                 </li>
                 <li>
+                  <a href="#about" className="hover:text-blue-600 transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
                   <a
                     href="#services"
                     className="hover:text-blue-600 transition"
                   >
                     Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-blue-600 transition">
-                    About Us
                   </a>
                 </li>
                 <li>
@@ -154,21 +154,34 @@ function App() {
           className="py-40 from-blue-50 to-green-50 bg-banner
            bg-no-repeat bg-center bg-cover h-full "
         >
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-300">
+          <div className="container mx-auto px-4 text-left">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300 max-w-2xl">
               Your Trusted <span className="text-blue-500">Animal Bite </span>
               Care Center
-            </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
+            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300"></h2>
+            <p className="text-xl mb-8 max-w-2xl  text-gray-300">
               Providing fast, reliable, and professional care for animal bites
               and rabies prevention.
             </p>
-            <a
-              href="#contact"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-md"
-            >
-              Book an Appointment
-            </a>
+            <ul className="flex items-center gap-5">
+              <li>
+                <a
+                  href="#contact"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md"
+                >
+                  Book an Appointment
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="inline-block bg-white hover:bg-gray-300 text-blue-600 font-medium py-3 px-8 rounded-xl  transition duration-300 shadow-md"
+                >
+                  Our Services
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
         {/* About Section */}
@@ -686,16 +699,16 @@ function App() {
                   </a>
                 </li>
                 <li>
+                  <a href="#about" className="hover:text-blue-600 transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
                   <a
                     href="#services"
                     className="hover:text-blue-600 transition"
                   >
                     Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-blue-600 transition">
-                    About Us
                   </a>
                 </li>
                 <li>
