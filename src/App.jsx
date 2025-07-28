@@ -25,33 +25,54 @@ function App() {
     <>
       <div className="min-h-screen font-sans bg-white text-gray-800">
         {/* Header */}
-        <header className="sticky top-0 z-50 bg-white shadow-md">
+        <header className="sticky top-0 z-50 bg-white shadow-md ">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center">
-              <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-xl">ABC</span>
+            <a href="#">
+              <div className="flex items-center">
+                <img
+                  className="w-10"
+                  src="./img/abtc-logo.webp"
+                  alt="Animal Bite Center Logo"
+                />
+                <span className="ml-2 font-bold text-xl">
+                  Animal Bite Center
+                </span>
               </div>
-              <span className="ml-2 font-bold text-xl">Animal Bite Center</span>
-            </div>
+            </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-blue-600 transition">
-                Home
-              </a>
-              <a href="#services" className="hover:text-blue-600 transition">
-                Services
-              </a>
-              <a href="#about" className="hover:text-blue-600 transition">
-                About Us
-              </a>
-              <a href="#blog" className="hover:text-blue-600 transition">
-                Blog & Tips
-              </a>
-              <a href="#contact" className="hover:text-blue-600 transition">
-                Contact
-              </a>
+            <nav>
+              <ul className="hidden md:flex space-x-8">
+                <li>
+                  <a href="#home" className="hover:text-blue-600 transition">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="hover:text-blue-600 transition"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="hover:text-blue-600 transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#blog" className="hover:text-blue-600 transition">
+                    Blog & Tips
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-blue-600 transition">
+                    Contact
+                  </a>
+                </li>
+              </ul>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -127,17 +148,18 @@ function App() {
             </div>
           )}
         </header>
-
         {/* Hero Section */}
         <section
           id="home"
-          className="py-20 bg-gradient-to-r from-blue-50 to-green-50"
+          className="py-40 from-blue-50 to-green-50 bg-banner
+           bg-no-repeat bg-center bg-cover h-full "
         >
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Your Trusted Animal Bite Care Center
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-300">
+              Your Trusted <span className="text-blue-500">Animal Bite </span>
+              Care Center
             </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
               Providing fast, reliable, and professional care for animal bites
               and rabies prevention.
             </p>
@@ -149,12 +171,11 @@ function App() {
             </a>
           </div>
         </section>
-
         {/* About Section */}
-        <section id="about" className="py-16 bg-white">
+        <section id="about" className="py-16 bg-white ">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">Our Mission</h2>
-            <div className="max-w-3xl mx-auto bg-green-50 rounded-xl p-8 shadow-sm">
+            <h2 className="text-3xl font-bold text-center">Our Mission</h2>
+            <div className="max-w-3xl mx-auto rounded-xl p-8 ">
               <p className="text-lg text-center">
                 We are committed to protecting the community by providing expert
                 care, vaccinations, and guidance for anyone exposed to animal
@@ -162,233 +183,315 @@ function App() {
                 ensuring your safety and peace of mind.
               </p>
             </div>
+            {/* About Section Cards */}
+            <div className="flex flex-wrap gap-10 items-center justify-items-center place-content-center mt-10">
+              {/* About Card 1 */}
+              <div className="text-center px-5 py-8 max-w-72 shadow-md hover:shadow-blue-400 rounded-xl">
+                <div className="block max-w-fit mx-auto bg-blue-50 p-4 rounded-full ">
+                  <img
+                    className="w-7"
+                    src="./img/shield.svg"
+                    alt="Shield Icon"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Expert Protection
+                  </h3>
+                  <p>
+                    Comprehensive rabies prevention and post-exposure
+                    prophylaxis following international medical protocols.
+                  </p>
+                </div>
+              </div>
+              {/* About Card 2 */}
+              <div className="text-center px-5 py-8 max-w-72 shadow-md hover:shadow-blue-400 rounded-xl">
+                <div className="block max-w-fit mx-auto bg-green-50 p-4 rounded-full ">
+                  <img className="w-7" src="./img/heart.svg" alt="Heart Icon" />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Compassionate Care
+                  </h3>
+                  <p>
+                    We understand the anxiety that comes with animal bites. Our
+                    team provides reassuring, patient-centered care.
+                  </p>
+                </div>
+              </div>
+              {/* About Card 3 */}
+              <div className="text-center px-5 py-8 max-w-72 shadow-md hover:shadow-blue-400 rounded-xl">
+                <div className="block max-w-fit mx-auto bg-blue-50 p-4 rounded-full ">
+                  <img className="w-7" src="./img/users.svg" alt="Users Icon" />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Community Focus
+                  </h3>
+                  <p>
+                    Dedicated to serving our community with accessible,
+                    professional medical care when you need it most.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-
         {/* Services Section */}
         <section id="services" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">
-              Our Services
+            <h2 className="text-3xl font-bold text-center">
+              Our Professional Services
             </h2>
+            <div className="max-w-3xl mx-auto rounded-xl p-8 ">
+              <p className="text-lg text-center">
+                Comprehensive medical care for animal bite incidents, from
+                immediate treatment to long-term prevention strategies.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Service Card 1 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                  <img
+                    className="w-7"
+                    src="./img/syringe.svg"
+                    alt="Syringe Icon"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">
                   Rabies Vaccination
                 </h3>
                 <p className="text-gray-600">
-                  Preventive and post-exposure rabies vaccinations administered
-                  by our medical professionals.
+                  Pre-exposure and post-exposure rabies vaccination following
+                  WHO guidelines for optimal protection.
                 </p>
               </div>
 
               {/* Service Card 2 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-                <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                  <img
+                    className="w-7"
+                    src="./img/stethoscope.svg"
+                    alt="Stethoscope Icon"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">
                   Animal Bite Treatment
                 </h3>
                 <p className="text-gray-600">
-                  Immediate care and treatment for animal bites to prevent
-                  infection and complications.
+                  Comprehensive wound care, cleaning, and medical treatment for
+                  all types of animal bite injuries.
                 </p>
               </div>
 
               {/* Service Card 3 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-                <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-yellow-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                  <img
+                    className="w-7"
+                    src="./img/message-square.svg"
+                    alt="Message square Icon"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Consultation</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Expert Consultation
+                </h3>
                 <p className="text-gray-600">
-                  Expert advice on animal bite management and rabies prevention
-                  from our specialists.
+                  Professional medical consultation to assess risk levels and
+                  determine appropriate treatment protocols.
                 </p>
               </div>
 
               {/* Service Card 4 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-purple-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                  <img
+                    className="w-7"
+                    src="./img/calendar.svg"
+                    alt="Calendar Icon"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Follow-Up Care</h3>
                 <p className="text-gray-600">
-                  Comprehensive follow-up services to monitor your recovery and
-                  ensure complete protection.
+                  Scheduled follow-up appointments to monitor healing progress
+                  and ensure complete recovery.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
         {/* Blog & Tips Section */}
         <section id="blog" className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">
-              Blog & Preventive Tips
+            <h2 className="text-3xl font-bold text-center">
+              Prevention & Safety Tips
             </h2>
+            <div className="max-w-3xl mx-auto rounded-xl p-8 ">
+              <p className="text-lg text-center">
+                Comprehensive medical care for animal bite incidents, from
+                immediate treatment to long-term prevention strategies.
+              </p>
+            </div>
+            {/*  Blog & Tips Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Tip 1 */}
-              <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <div className="h-48 bg-blue-100 flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <div className="h-fit ">
+                  <img
+                    className="w-full h-60 object-cover"
+                    src="./img/first-aid.webp"
+                    alt="First Aid Image"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    What to Do After an Animal Bite
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#3b82f6"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="size-5"
+                      >
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                      </svg>
+                      <h4 className="text-blue-600 text-lg font-semibold">
+                        Emergency Care
+                      </h4>
+                    </div>
+                    <div className="text-red-600 font-medium bg-red-100 pb-[2px] px-3 border border-red-300 rounded-full">
+                      <small>Emergency Care</small>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 ">
+                    Essential First Aid for Animal Bites
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Immediate steps to take if you've been bitten by an animal
-                    to reduce infection risk.
+                    Learn the crucial steps to take immediately after an animal
+                    bite to prevent infection and promote healing.
                   </p>
+                  <h5 className="text-md font-semibold mb-2">Key Points:</h5>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                    <li>Wash the wound thoroughly with soap and water</li>
-                    <li>Apply antiseptic if available</li>
-                    <li>Seek medical attention immediately</li>
+                    <li>
+                      Clean the wound immediately with soap and warm water
+                    </li>
+                    <li>Apply pressure to control bleeding</li>
+                    <li>Seek medical attention within 24 hours</li>
+                    <li>Monitor for signs of infection</li>
                   </ul>
                 </div>
               </div>
-
               {/* Tip 2 */}
-              <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <div className="h-48 bg-green-100 flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <div className="h-fit ">
+                  <img
+                    className="w-full h-60 object-cover"
+                    src="./img/prevention.webp"
+                    alt="Prevention Image"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    Preventing Animal Bites
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#3b82f6"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="size-5"
+                      >
+                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                      </svg>
+                      <h4 className="text-blue-600 text-lg font-semibold">
+                        Prevention
+                      </h4>
+                    </div>
+                    <div className="text-green-600 font-medium bg-green-100 pb-[2px] px-3 border border-green-300 rounded-full">
+                      <small>Prevention</small>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 ">
+                    Preventing Animal Bites: Safety Guidelines
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    How to reduce your risk of being bitten by animals.
+                    Practical tips to avoid dangerous encounters with animals
+                    and protect yourself and your family.
                   </p>
+                  <h5 className="text-md font-semibold mb-2">Key Points:</h5>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     <li>Never approach unfamiliar animals</li>
-                    <li>
-                      Avoid disturbing animals that are eating or sleeping
-                    </li>
-                    <li>Teach children how to interact safely with pets</li>
-                    <li>Vaccinate your pets against rabies</li>
+                    <li>Teach children proper animal interaction</li>
+                    <li>Avoid disturbing animals while eating or sleeping</li>
+                    <li>Keep pets vaccinated and properly trained</li>
                   </ul>
                 </div>
               </div>
-
               {/* Tip 3 */}
-              <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <div className="h-48 bg-yellow-100 flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-yellow-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                    />
-                  </svg>
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <div className="h-fit ">
+                  <img
+                    className="w-full h-60 object-cover"
+                    src="./img/recovery.webp"
+                    alt="Recovery Image"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    Understanding Rabies
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#3b82f6"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className=" size-5"
+                      >
+                        <path d="M12 7v14"></path>
+                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                      </svg>
+                      <h4 className="text-blue-600 text-lg font-semibold">
+                        Recovery
+                      </h4>
+                    </div>
+                    <div className="text-gray-600 font-medium bg-gray-100 pb-[2px] px-3 border border-gray-300 rounded-full">
+                      <small>Recovery</small>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 ">
+                    Wound Care and Recovery Guidelines
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Key facts about rabies and why prompt treatment is
-                    essential.
+                    Proper wound care techniques to ensure optimal healing and
+                    reduce complications.
                   </p>
+                  <h5 className="text-md font-semibold mb-2">Key Points:</h5>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
-                    <li>Rabies is almost always fatal once symptoms appear</li>
-                    <li>The disease is preventable with prompt treatment</li>
-                    <li>Symptoms may take weeks or months to appear</li>
-                    <li>
-                      All mammal bites should be evaluated for rabies risk
-                    </li>
+                    <li>Keep wounds clean and dry</li>
+                    <li>Change dressings regularly</li>
+                    <li>Watch for signs of healing complications</li>
+                    <li>Follow up with healthcare providers</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
         {/* Contact Section */}
         <section id="contact" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -550,60 +653,82 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* Footer */}
-        <footer className="bg-gray-800 text-white py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="mb-4 md:mb-0">
+        <footer className="bg-gray-900 text-white px-6 py-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center space-x-3">
                 <div className="flex items-center">
-                  <div className="bg-blue-100 rounded-full w-10 h-10 flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">ABC</span>
-                  </div>
-                  <span className="ml-2 font-bold text-lg">
-                    Animal Bite Center
-                  </span>
+                  <img
+                    className="w-10"
+                    src="./img/abtc-logo.webp"
+                    alt="Animal Bite Center Logo"
+                  />
                 </div>
-                <p className="mt-2 text-gray-400 text-sm">
-                  Your trusted partner in animal bite care
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold">Animal Bite Center</h3>
+                  <p className="text-sm">Professional Care & Prevention</p>
+                </div>
               </div>
-              <div className="flex space-x-6">
-                <a href="#" className="hover:text-blue-400 transition">
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                  </svg>
-                </a>
-                <a href="#" className="hover:text-blue-400 transition">
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
-                <a href="#" className="hover:text-blue-400 transition">
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div className="mt-8 pt-6 border-t border-gray-700 text-center text-gray-400 text-sm">
-              <p>
-                © {new Date().getFullYear()} Animal Bite Center. All rights
-                reserved.
+              <p className="mt-4 text-sm">
+                Committed to protecting our community through expert medical
+                care, professional guidance, and comprehensive animal bite
+                treatment.
               </p>
             </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+              <ul className="space-y-1 text-sm">
+                <li>
+                  <a href="#home" className="hover:text-blue-600 transition">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="hover:text-blue-600 transition"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="hover:text-blue-600 transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#blog" className="hover:text-blue-600 transition">
+                    Blog & Tips
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-blue-600 transition">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
+              <p className="text-sm">
+                2nd Floor Colossal Bldg., Brgy. Bihis,
+                <br />
+                Sta. Teresita, Batangas
+              </p>
+              <p className="text-sm mt-2">Phone: 0912 660 7330</p>
+              <p className="text-sm">Email: madjo.orca@gmail.com</p>
+            </div>
+          </div>
+
+          <hr className="my-8 border-gray-700" />
+
+          <div className="text-center text-sm text-gray-400">
+            <p className="mt-1">
+              © 2025 Animal Bite Center. All rights reserved.
+            </p>
           </div>
         </footer>
       </div>
