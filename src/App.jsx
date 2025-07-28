@@ -337,7 +337,7 @@ function App() {
             {/*  Blog & Tips Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Tip 1 */}
-              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-blue-400 transition duration-300">
                 <div className="h-fit ">
                   <img
                     className="w-full h-60 object-cover"
@@ -389,7 +389,7 @@ function App() {
                 </div>
               </div>
               {/* Tip 2 */}
-              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-blue-400 transition duration-300">
                 <div className="h-fit ">
                   <img
                     className="w-full h-60 object-cover"
@@ -439,7 +439,7 @@ function App() {
                 </div>
               </div>
               {/* Tip 3 */}
-              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+              <div className=" bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-blue-400 transition duration-300">
                 <div className="h-fit ">
                   <img
                     className="w-full h-60 object-cover"
