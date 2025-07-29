@@ -6,4 +6,7 @@
   html {
     @apply scroll-smooth scroll-p-16;
   }
+  body {
+    @apply overflow-x-hidden;
+  }
 }

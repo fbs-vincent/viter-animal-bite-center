@@ -43,7 +43,7 @@ function App() {
 
             {/* Desktop Navigation */}
             <nav>
-              <ul className="hidden md:flex space-x-8">
+              <ul className="hidden md:flex space-x-8 items-center">
                 <li>
                   <a href="#home" className="hover:text-blue-600 transition">
                     Home
@@ -68,7 +68,10 @@ function App() {
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-blue-600 transition">
+                  <a
+                    href="#contact"
+                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-xl transition duration-300 shadow-md w-full md:w-fit"
+                  >
                     Contact
                   </a>
                 </li>
@@ -151,32 +154,31 @@ function App() {
         {/* Hero Section */}
         <section
           id="home"
-          className="py-40 from-blue-50 to-green-50 bg-banner
-           bg-no-repeat bg-center bg-cover h-full "
+          className=" py-40 h-[40rem] md:h-full bg-no-repeat bg-cover [background-position:95%_50%] bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/img/banner-2.webp')] lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.5),rgba(0,0,0,0.0)),url('/img/banner-2.webp')] 
+ "
         >
           <div className="container mx-auto px-4 text-left">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300 max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white max-w-2xl">
               Your Trusted <span className="text-blue-500">Animal Bite </span>
               Care Center
             </h2>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300"></h2>
-            <p className="text-xl mb-8 max-w-2xl  text-gray-300">
+            <p className="text-xl mb-8 max-w-2xl  text-white">
               Providing fast, reliable, and professional care for animal bites
               and rabies prevention.
             </p>
-            <ul className="flex items-center gap-5">
-              <li>
+            <ul className="flex flex-col md:flex-row items-center gap-5">
+              <li className=" text-center w-full md:w-fit">
                 <a
                   href="#contact"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md w-full md:w-fit"
                 >
                   Book an Appointment
                 </a>
               </li>
-              <li>
+              <li className="  text-center w-full md:w-fit">
                 <a
                   href="#services"
-                  className="inline-block bg-white hover:bg-gray-300 text-blue-600 font-medium py-3 px-8 rounded-xl  transition duration-300 shadow-md"
+                  className="inline-block bg-white hover:bg-gray-300 text-blue-600 font-medium py-3 px-8 rounded-xl  transition duration-300 shadow-md w-full md:w-fit"
                 >
                   Our Services
                 </a>
@@ -252,6 +254,7 @@ function App() {
             </div>
           </div>
         </section>
+
         {/* Services Section */}
         <section id="services" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -264,75 +267,84 @@ function App() {
                 immediate treatment to long-term prevention strategies.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Service Card 1 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
-                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
-                  <img
-                    className="w-7"
-                    src="./img/syringe.svg"
-                    alt="Syringe Icon"
-                  />
+            <div className="flex flex-wrap-reverse xl:flex-nowrap items-center justify-center gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:max-w-3xl  gap-6 ">
+                {/* Service Card 1 */}
+                <div className="bg-white h-fit rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                  <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                    <img
+                      className="w-7"
+                      src="./img/syringe.svg"
+                      alt="Syringe Icon"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Rabies Vaccination
+                  </h3>
+                  <p className="text-gray-600">
+                    Pre-exposure and post-exposure rabies vaccination following
+                    WHO guidelines for optimal protection.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Rabies Vaccination
-                </h3>
-                <p className="text-gray-600">
-                  Pre-exposure and post-exposure rabies vaccination following
-                  WHO guidelines for optimal protection.
-                </p>
-              </div>
 
-              {/* Service Card 2 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
-                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
-                  <img
-                    className="w-7"
-                    src="./img/stethoscope.svg"
-                    alt="Stethoscope Icon"
-                  />
+                {/* Service Card 2 */}
+                <div className="bg-white h-fit rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                  <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                    <img
+                      className="w-7"
+                      src="./img/stethoscope.svg"
+                      alt="Stethoscope Icon"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Animal Bite Treatment
+                  </h3>
+                  <p className="text-gray-600">
+                    Comprehensive wound care, cleaning, and medical treatment
+                    for all types of animal bite injuries.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Animal Bite Treatment
-                </h3>
-                <p className="text-gray-600">
-                  Comprehensive wound care, cleaning, and medical treatment for
-                  all types of animal bite injuries.
-                </p>
-              </div>
 
-              {/* Service Card 3 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
-                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
-                  <img
-                    className="w-7"
-                    src="./img/message-square.svg"
-                    alt="Message square Icon"
-                  />
+                {/* Service Card 3 */}
+                <div className="bg-white h-fit rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                  <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                    <img
+                      className="w-7"
+                      src="./img/message-square.svg"
+                      alt="Message square Icon"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Expert Consultation
+                  </h3>
+                  <p className="text-gray-600">
+                    Professional medical consultation to assess risk levels and
+                    determine appropriate treatment protocols.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Expert Consultation
-                </h3>
-                <p className="text-gray-600">
-                  Professional medical consultation to assess risk levels and
-                  determine appropriate treatment protocols.
-                </p>
-              </div>
 
-              {/* Service Card 4 */}
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
-                <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
-                  <img
-                    className="w-7"
-                    src="./img/calendar.svg"
-                    alt="Calendar Icon"
-                  />
+                {/* Service Card 4 */}
+                <div className="bg-white h-fit rounded-xl p-6 shadow-md hover:shadow-lg hover:bg-blue-100 transition duration-300">
+                  <div className="bg-gray-100 size-12 rounded-full flex items-center justify-center mb-4">
+                    <img
+                      className="w-7"
+                      src="./img/calendar.svg"
+                      alt="Calendar Icon"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Follow-Up Care</h3>
+                  <p className="text-gray-600">
+                    Scheduled follow-up appointments to monitor healing progress
+                    and ensure complete recovery.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Follow-Up Care</h3>
-                <p className="text-gray-600">
-                  Scheduled follow-up appointments to monitor healing progress
-                  and ensure complete recovery.
-                </p>
+              </div>
+              <div className="mx-auto block max-w-fit">
+                <img
+                  className="w-96  xl:w-full"
+                  src="./img/doctor.webp"
+                  alt="Doctor Image"
+                />
               </div>
             </div>
           </div>
