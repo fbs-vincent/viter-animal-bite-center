@@ -156,47 +156,62 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden bg-white py-4 px-4 shadow-lg">
               <div className="flex flex-col space-y-3">
-                <a
-                  href="#home"
-                  className="hover:text-blue-600 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </a>
-                <a
-                  href="#services"
-                  className="hover:text-blue-600 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </a>
-                <a
-                  href="#about"
-                  className="hover:text-blue-600 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </a>
-                <a
-                  href="#blog"
-                  className="hover:text-blue-600 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Blog & Tips
-                </a>
-                <a
-                  href="#contact"
-                  className="hover:text-blue-600 transition"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </a>
+                <ul className="flex flex-col space-y-3">
+                  <li>
+                    <a
+                      href="#home"
+                      className="hover:text-blue-600 transition"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#about"
+                      className="hover:text-blue-600 transition"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      className="hover:text-blue-600 transition"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#blog"
+                      className="hover:text-blue-600 transition"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Blog & Tips
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="hover:text-blue-600 transition"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           )}
         </header>
         {/* Hero Section */}
-        <section className="relative h-[40rem] md:h-screen overflow-hidden flex items-center justify-start">
+        <section
+          id="home"
+          className="relative h-[40rem] md:h-screen overflow-hidden flex items-center justify-start"
+        >
           <div className="absolute inset-0 z-10">
             {images.map((src, index) => (
               <img
@@ -213,7 +228,7 @@ function App() {
               className={`absolute inset-0 z-20 pointer-events-none ${
                 deviceType === "desktop"
                   ? "bg-gradient-to-r  from-[#00137b] to-transparent"
-                  : "bg-gradient-to-b from-black/80 to-black/90"
+                  : "bg-gradient-to-b from-black/70 to-black/90"
               }`}
             />
           </div>
