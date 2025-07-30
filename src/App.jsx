@@ -36,10 +36,27 @@ function App() {
   }
 
   useEffect(() => {
-    const handleResize = () => setDeviceType(getDeviceType());
+    const handleResize = () => {
+      const newDeviceType = getDeviceType();
+
+      // Check if device type changed from desktop to mobile-tablet
+      if (deviceType === "desktop" && newDeviceType === "mobile-tablet") {
+        window.location.reload();
+        return;
+      }
+
+      // Check if device type changed from mobile-tablet to desktop
+      if (deviceType === "mobile-tablet" && newDeviceType === "desktop") {
+        window.location.reload();
+        return;
+      }
+
+      setDeviceType(newDeviceType);
+    };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [deviceType]); // Add deviceType as dependency
 
   useEffect(() => {
     if (deviceType === "desktop") {
@@ -48,7 +65,7 @@ function App() {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [currentIndex, deviceType]);
+  }, [currentIndex, deviceType, images.length]);
 
   return (
     <>
@@ -188,7 +205,7 @@ function App() {
                 key={index}
                 src={src}
                 alt=""
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                className={`absolute inset-0 h-full w-full object-cover object-right lg:object-center transition-opacity duration-1000 ${
                   currentIndex === index ? "opacity-100" : "opacity-0"
                 }`}
               />
