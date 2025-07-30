@@ -39,13 +39,11 @@ function App() {
     const handleResize = () => {
       const newDeviceType = getDeviceType();
 
-      // Check if device type changed from desktop to mobile-tablet
       if (deviceType === "desktop" && newDeviceType === "mobile-tablet") {
         window.location.reload();
         return;
       }
 
-      // Check if device type changed from mobile-tablet to desktop
       if (deviceType === "mobile-tablet" && newDeviceType === "desktop") {
         window.location.reload();
         return;
@@ -56,7 +54,7 @@ function App() {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [deviceType]); // Add deviceType as dependency
+  }, [deviceType]);
 
   useEffect(() => {
     if (deviceType === "desktop") {
