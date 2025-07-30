@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -21,6 +21,35 @@ function App() {
     alert("Thank you for your message! We will contact you soon.");
     setFormData({ name: "", email: "", message: "" });
   };
+
+  const images = [
+    "/img/banner-2.webp",
+    "/img/banner-3.webp",
+    "/img/banner-4.webp",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [deviceType, setDeviceType] = useState(getDeviceType());
+
+  function getDeviceType() {
+    return window.innerWidth <= 1024 ? "mobile-tablet" : "desktop";
+  }
+
+  useEffect(() => {
+    const handleResize = () => setDeviceType(getDeviceType());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (deviceType === "desktop") {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, deviceType]);
+
   return (
     <>
       <div className="min-h-screen font-sans bg-white text-gray-800">
@@ -152,40 +181,60 @@ function App() {
           )}
         </header>
         {/* Hero Section */}
-        <section
-          id="home"
-          className=" py-40 h-[40rem] md:h-full bg-no-repeat bg-cover [background-position:95%_50%] bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/img/banner-2.webp')] lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.5),rgba(0,0,0,0.0)),url('/img/banner-2.webp')] 
- "
-        >
-          <div className="container mx-auto px-4 text-left">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white max-w-2xl">
-              Your Trusted <span className="text-blue-500">Animal Bite </span>
-              Care Center
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl  text-white">
-              Providing fast, reliable, and professional care for animal bites
-              and rabies prevention.
-            </p>
-            <ul className="flex flex-col md:flex-row items-center gap-5">
-              <li className=" text-center w-full md:w-fit">
-                <a
-                  href="#contact"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md w-full md:w-fit"
-                >
-                  Book an Appointment
-                </a>
-              </li>
-              <li className="  text-center w-full md:w-fit">
-                <a
-                  href="#services"
-                  className="inline-block bg-white hover:bg-gray-300 text-blue-600 font-medium py-3 px-8 rounded-xl  transition duration-300 shadow-md w-full md:w-fit"
-                >
-                  Our Services
-                </a>
-              </li>
-            </ul>
+        <section className="relative h-[40rem] md:h-screen overflow-hidden flex items-center justify-start">
+          <div className="absolute inset-0 z-10">
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt=""
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                  currentIndex === index ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+
+            <div
+              className={`absolute inset-0 z-20 pointer-events-none ${
+                deviceType === "desktop"
+                  ? "bg-gradient-to-r from-black/80 to-black/0"
+                  : "bg-gradient-to-b from-black/80 to-black/90"
+              }`}
+            />
+          </div>
+
+          <div className="relative z-30 px-4 w-full">
+            <div className="container mx-auto text-left">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white max-w-2xl">
+                Your Trusted <span className="text-blue-500">Animal Bite</span>{" "}
+                Care Center
+              </h2>
+              <p className="text-xl mb-8 max-w-2xl text-white">
+                Providing fast, reliable, and professional care for animal bites
+                and rabies prevention.
+              </p>
+              <ul className="flex flex-col md:flex-row items-center gap-5">
+                <li className="text-center w-full md:w-fit">
+                  <a
+                    href="#contact"
+                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md w-full md:w-fit"
+                  >
+                    Book an Appointment
+                  </a>
+                </li>
+                <li className="text-center w-full md:w-fit">
+                  <a
+                    href="#services"
+                    className="inline-block bg-white hover:bg-gray-300 text-blue-600 font-medium py-3 px-8 rounded-xl transition duration-300 shadow-md w-full md:w-fit"
+                  >
+                    Our Services
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
+
         {/* About Section */}
         <section id="about" className="py-16 bg-white ">
           <div className="container mx-auto px-4">
@@ -254,7 +303,6 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* Services Section */}
         <section id="services" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -605,6 +653,34 @@ function App() {
                       <p className="text-gray-600">madjo.orca@gmail.com</p>
                     </div>
                   </div>
+
+                  <div className="flex items-start">
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/p/Bite-Care-Animal-Bite-Center-61565543106297/"
+                      className="flex items-start"
+                    >
+                      <div className="bg-red-100 p-2 rounded-full mr-4">
+                        <svg
+                          className="w-5 h-5 text-red-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeWidth={2}
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Facebook</h4>
+                        <p className="text-gray-600">
+                          Animal Bite Center Faceboook Page
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
 
                 <div className="mt-8 h-64 bg-gray-200 rounded-lg overflow-hidden">
@@ -684,8 +760,8 @@ function App() {
         </section>
         {/* Footer */}
         <footer className="bg-gray-900 text-white px-6 py-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
+          <div className=" container  mx-auto px-4 flex flex-wrap gap-8">
+            <div className="md:mr-72">
               <div className="flex items-center space-x-3">
                 <div className="flex items-center">
                   <img
@@ -699,56 +775,112 @@ function App() {
                   <p className="text-sm">Professional Care & Prevention</p>
                 </div>
               </div>
-              <p className="mt-4 text-sm">
+              <p className="mt-4 text-sm max-w-md">
                 Committed to protecting our community through expert medical
                 care, professional guidance, and comprehensive animal bite
                 treatment.
               </p>
             </div>
+            <div className="flex flex-col md:flex-row md:align-center gap-8 lg:gap-56">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    <a href="#home" className="hover:text-blue-600 transition">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" className="hover:text-blue-600 transition">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      className="hover:text-blue-600 transition"
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#blog" className="hover:text-blue-600 transition">
+                      Blog & Tips
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      className="hover:text-blue-600 transition"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-              <ul className="space-y-1 text-sm">
-                <li>
-                  <a href="#home" className="hover:text-blue-600 transition">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-blue-600 transition">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-blue-600 transition"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#blog" className="hover:text-blue-600 transition">
-                    Blog & Tips
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="hover:text-blue-600 transition">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
-              <p className="text-sm">
-                2nd Floor Colossal Bldg., Brgy. Bihis,
-                <br />
-                Sta. Teresita, Batangas
-              </p>
-              <p className="text-sm mt-2">Phone: 0912 660 7330</p>
-              <p className="text-sm">Email: madjo.orca@gmail.com</p>
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
+                <p className="text-sm">
+                  2nd Floor Colossal Bldg., Brgy. Bihis,
+                  <br />
+                  Sta. Teresita, Batangas
+                </p>
+                <p className="text-sm mt-2">Phone: 0912 660 7330</p>
+                <p className="text-sm">Email: madjo.orca@gmail.com</p>
+                <ul className="flex items-center gap-2 mt-5 ">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/p/Bite-Care-Animal-Bite-Center-61565543106297/"
+                    >
+                      <svg
+                        className="size-7 md:size-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="#">
+                      <svg
+                        className="size-7 md:size-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="#">
+                      <svg
+                        className="size-7 md:size-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
