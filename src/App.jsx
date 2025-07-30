@@ -234,7 +234,6 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* About Section */}
         <section id="about" className="py-16 bg-white ">
           <div className="container mx-auto px-4">
@@ -760,126 +759,139 @@ function App() {
         </section>
         {/* Footer */}
         <footer className="bg-gray-900 text-white px-6 py-10">
-          <div className=" container  mx-auto px-4 flex flex-wrap gap-8">
-            <div className="md:mr-72">
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center">
-                  <img
-                    className="w-10"
-                    src="./img/abtc-logo.webp"
-                    alt="Animal Bite Center Logo"
-                  />
+          <div className=" container  mx-auto px-4 ">
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="xl:mr-72">
+                <div className="flex items-center space-x-3">
+                  <div className="flex items-center">
+                    <img
+                      className="w-10"
+                      src="./img/abtc-logo.webp"
+                      alt="Animal Bite Center Logo"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">
+                      Animal Bite Center
+                    </h3>
+                    <p className="text-sm">Professional Care & Prevention</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Animal Bite Center</h3>
-                  <p className="text-sm">Professional Care & Prevention</p>
-                </div>
-              </div>
-              <p className="mt-4 text-sm max-w-md">
-                Committed to protecting our community through expert medical
-                care, professional guidance, and comprehensive animal bite
-                treatment.
-              </p>
-            </div>
-            <div className="flex flex-col md:flex-row md:align-center gap-8 lg:gap-56">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-                <ul className="space-y-1 text-sm">
-                  <li>
-                    <a href="#home" className="hover:text-blue-600 transition">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about" className="hover:text-blue-600 transition">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#services"
-                      className="hover:text-blue-600 transition"
-                    >
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#blog" className="hover:text-blue-600 transition">
-                      Blog & Tips
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#contact"
-                      className="hover:text-blue-600 transition"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
-                <p className="text-sm">
-                  2nd Floor Colossal Bldg., Brgy. Bihis,
-                  <br />
-                  Sta. Teresita, Batangas
+                <p className="mt-4 text-sm max-w-md">
+                  Committed to protecting our community through expert medical
+                  care, professional guidance, and comprehensive animal bite
+                  treatment.
                 </p>
-                <p className="text-sm mt-2">Phone: 0912 660 7330</p>
-                <p className="text-sm">Email: madjo.orca@gmail.com</p>
-                <ul className="flex items-center gap-2 mt-5 ">
-                  <li>
-                    <a
-                      target="_blank"
-                      href="https://www.facebook.com/p/Bite-Care-Animal-Bite-Center-61565543106297/"
-                    >
-                      <svg
-                        className="size-7 md:size-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+              </div>
+              <div className="flex flex-col md:flex-row md:align-center gap-8 md:gap:10 xl:gap-52">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      <a
+                        href="#home"
+                        className="hover:text-blue-600 transition"
                       >
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="#">
-                      <svg
-                        className="size-7 md:size-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#about"
+                        className="hover:text-blue-600 transition"
                       >
-                        <rect
-                          width="20"
-                          height="20"
-                          x="2"
-                          y="2"
-                          rx="5"
-                          ry="5"
-                        />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="#">
-                      <svg
-                        className="size-7 md:size-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#services"
+                        className="hover:text-blue-600 transition"
                       >
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                        <rect width="4" height="12" x="2" y="9" />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                        Services
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#blog"
+                        className="hover:text-blue-600 transition"
+                      >
+                        Blog & Tips
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#contact"
+                        className="hover:text-blue-600 transition"
+                      >
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
+                  <p className="text-sm">
+                    2nd Floor Colossal Bldg., Brgy. Bihis,
+                    <br />
+                    Sta. Teresita, Batangas
+                  </p>
+                  <p className="text-sm mt-2">Phone: 0912 660 7330</p>
+                  <p className="text-sm">Email: madjo.orca@gmail.com</p>
+                  <ul className="flex items-center gap-2 mt-5 ">
+                    <li>
+                      <a
+                        target="_blank"
+                        href="https://www.facebook.com/p/Bite-Care-Animal-Bite-Center-61565543106297/"
+                      >
+                        <svg
+                          className="size-7 md:size-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" href="#">
+                        <svg
+                          className="size-7 md:size-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <rect
+                            width="20"
+                            height="20"
+                            x="2"
+                            y="2"
+                            rx="5"
+                            ry="5"
+                          />
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" href="#">
+                        <svg
+                          className="size-7 md:size-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                          <rect width="4" height="12" x="2" y="9" />
+                          <circle cx="4" cy="4" r="2" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
