@@ -212,7 +212,7 @@ function App() {
             <div
               className={`absolute inset-0 z-20 pointer-events-none ${
                 deviceType === "desktop"
-                  ? "bg-gradient-to-r from-black/80 to-black/0"
+                  ? "bg-gradient-to-r  from-[#00137b] to-transparent"
                   : "bg-gradient-to-b from-black/80 to-black/90"
               }`}
             />
